@@ -1,4 +1,4 @@
-with_contextvars
+with-contextvars
 ================
 
 This module provides ``Set``, a context manager which sets one or more ``contextvars``

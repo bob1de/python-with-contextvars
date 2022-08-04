@@ -7,13 +7,13 @@ line-length = 88
 target-version = ["py37"]
 
 [tool.poetry]
-name = "with_contextvars"
-version = "0.1.0"
+name = "with-contextvars"
+version = "0.1.1"
 description = "Context manager for setting contextvars variables"
 authors = ["Robert Schindler <dev@bob1.de>"]
 license = "MIT"
 readme = "README.rst"
-homepage = "https://github.com/bob1de/with_contextvars"
+homepage = "https://github.com/bob1de/with-contextvars"
 
 [tool.poetry.dependencies]
 python = "^3.7"
