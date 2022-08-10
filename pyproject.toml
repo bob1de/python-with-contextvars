@@ -13,7 +13,7 @@ description = "Context manager for setting contextvars variables"
 authors = ["Robert Schindler <dev@bob1.de>"]
 license = "MIT"
 readme = "README.rst"
-homepage = "https://github.com/bob1de/with-contextvars"
+homepage = "https://github.com/bob1de/python-with-contextvars"
 
 [tool.poetry.dependencies]
 python = "^3.7"
