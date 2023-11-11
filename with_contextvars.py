@@ -36,7 +36,7 @@ import contextvars
 
 
 __all__ = ("Set",)
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 
 
 class Set:
@@ -58,7 +58,7 @@ class Set:
 
     def __init__(self, *assignments: T.Tuple[contextvars.ContextVar, T.Any]):
         self._assignments = assignments
-        self._tokens: T.Optional[T.Tuple[contextvars.ContextVar, T.Any]] = None
+        self._tokens: T.Optional[T.Tuple[contextvars.Token]] = None
 
     def __add__(self, other: "Set") -> "Set":
         if not isinstance(other, type(self)):

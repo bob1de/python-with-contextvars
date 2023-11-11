@@ -8,7 +8,7 @@ target-version = ["py37"]
 
 [tool.poetry]
 name = "with-contextvars"
-version = "0.1.1"
+version = "0.1.2"
 description = "Context manager for setting contextvars variables"
 authors = ["Robert Schindler <dev@bob1.de>"]
 license = "MIT"
@@ -18,5 +18,5 @@ homepage = "https://github.com/bob1de/python-with-contextvars"
 [tool.poetry.dependencies]
 python = "^3.7"
 
-[tool.poetry.dev-dependencies]
-black = "^22.6.0"
+[tool.poetry.group.dev.dependencies]
+black = "^22.12.0"
