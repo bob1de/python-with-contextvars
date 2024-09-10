@@ -11,22 +11,30 @@ Usage::
     B = contextvars.ContextVar("B")
     A.set("Hello,")
     B.set("world!")
-    print(A.get(), B.get())
-    # prints: Hello, world!
     with with_contextvars.Set((A, "other"), (B, "value")):
         print(A.get(), B.get())
         # prints: other value
     print(A.get(), B.get())
     # prints: Hello, world!
 
-Even the entirety of variable assignments of a ``contextvars.Context`` object
-(as obtained from ``contextvars.copy_context()``) can be activated by initializing
-``Set`` with its items::
+\... which is a shorthand for::
+
+    t_A = A.set("other")
+    t_B = B.set("value")
+    try:
+        ...
+    finally:
+        A.reset(t_A)
+        B.reset(t_B)
+
+Even the entirety of variable assignments of a ``contextvars.Context`` object (as
+obtained from ``contextvars.copy_context()``) can be set this way::
 
     with with_contextvars.Set(*context.items()):
         ...
 
-However, using ``contextvars.Context.run()`` is more efficient and should be preferred
-where possible.
+However, this should not be thought of as an equivalent of
+``contextvars.Context.run()``, which runs code inside another context, while this
+library applies variable assignments to the context currently active.
 
 More information can be found in the documentation of ``Set``.
